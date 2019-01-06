@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; /*import de modulerotas*/
+import {  Routes, RouterModule } from '@angular/router'; /*import de modulerotas*/
 import { FormsModule } from '@angular/forms';  /*import modelule de formualrio*/
 
 import { TarefaService} from './shared';
@@ -10,7 +10,9 @@ import { CadastrarTarefaComponent } from './cadastrar';
 @NgModule({
   declarations: [ListarTarefaComponent, CadastrarTarefaComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule
   ],
 
   /* faço a declaração do servico*/

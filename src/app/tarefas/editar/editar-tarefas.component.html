@@ -1,3 +1,44 @@
-<p>
-  editar-tarefas works!
-</p>
+<h1>Editar tarefa</h1>
+
+<div class="well">
+
+      <!--Cria um link de associaçao com o form de tarefas do component #formTarefa-->
+  <form #formTarefa="ngForm">
+    <div class="form-group">
+
+      <label for="nome">Tarefa:</label>
+
+      <input type="text" class="form-control" id="nome"
+        name="nome"
+       [(ngModel)]="tarefa.nome"
+        #nome ="ngModel"
+        minlength="5" 
+        required> 
+
+      <div *ngIf="nome.errors && (nome.dirty || nome.touched)"
+           class="alert alert-danger">
+        <div [hidden]="!nome.errors.required">
+          Digite a tarefa.
+        </div>
+
+        <div [hidden]="!nome.errors.minlength">
+          A tarefa deve conter ao menos 5 caracteres.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group text-center">
+      <button type="button" class="btn btn-success"
+          (click)="atualizar()" [disabled]="!formTarefa.form.valid"><span class="glyphicon glyphicon-refresh"></span> Atualizar</button>
+       
+
+      <a [routerLink]="['/tarefas']"
+        class="btn btn-default">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar
+      </a>
+
+    </div>
+
+  </form>
+</div>

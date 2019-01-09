@@ -17,10 +17,10 @@
       </div>
 
       <div class="text-center">
-        <input type="submit" class="btn btn-success" 
+        <button type="submit" class="btn btn-primary"  title="Cadastrar"
         (click)="cadastrar()"
-        value="Cadastrar"
         [disabled]="!formTarefa.form.valid">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Cadastra</button>
 
         <a routerLink="/tarefas/listar" class="btn btn-default">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Voltar</a>

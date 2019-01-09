@@ -2,6 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ListarTarefaComponent } from './listar';
 import { CadastrarTarefaComponent } from './cadastrar';
+import { EditarTarefasComponent } from './editar';
+
 
 export const TarefasRoutes: Routes = [
     /**atalhp para rotas */
@@ -20,5 +22,11 @@ export const TarefasRoutes: Routes = [
     {
         path: 'tarefas/cadastra',
         component: CadastrarTarefaComponent,
+    },
+
+     /**rota para pagina deedição de tarefas */
+     {
+        path: 'tarefas/editar/:id',
+        component: EditarTarefasComponent,
     }
 ];

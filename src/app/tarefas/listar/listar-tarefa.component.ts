@@ -26,11 +26,20 @@ listarTodos(): Tarefa [] {
 
 /* Remover */
 remover($event: any, tarefa: Tarefa): void {
-  $event.preventDefault();
+  $event.preventDefault(); /* EVITA QUE A PAGINA SEJA REDENRIZADA */
   if (confirm('Deseja remover a tarefa "' + tarefa.nome + '"?')) {
       this.tarefaService.romover(tarefa.id);
       this.tarefas = this.listarTodos();
   }
 }
 
+  /* Alterar Status*/
+  alterarStatus($event: any, tarefa: Tarefa): void {
+    $event.preventDefault(); /* EVITA QUE A PAGINA SEJA REDENRIZADA */
+    if (confirm('Deseja Alterar o statos "' + tarefa.nome + '"?')) {
+        this.tarefaService.alterarStatus(tarefa.id);
+        this.tarefas = this.listarTodos();
+    }
+
+  }
 }

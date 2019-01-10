@@ -13,8 +13,10 @@
   </tr>
 
   <!--Corpo da Tabela-->
-  <tr *ngFor="let tarefa of tarefas">
-    <td [class.success]="!tarefa.concluida">       
+  <tr *ngFor="let tarefa of tarefas">    
+    <td 
+      [appTarefaConcluida]="tarefa.concluida"
+      [class.success]="!tarefa.concluida">       
       {{ tarefa.nome }} 
     </td>
 
@@ -22,7 +24,8 @@
         <input
            type="checkbox" style="width: 200px"
            [value]="tarefa.id"
-           [checked]="tarefa.concluida">     
+           [checked]="tarefa.concluida" 
+           (click)="alterarStatus($event,tarefa)">   
     </td>
     
     <td>
